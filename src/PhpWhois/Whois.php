@@ -4,7 +4,7 @@
  * This file is part of the PHPWhois package.
  *
  * (c) Peter Kokot <peterkokot@gmail.com>
- * 
+ *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
@@ -66,7 +66,7 @@ class Whois
 
     /**
      * Looks up the current domain or IP.
-     * 
+     *
      * @return string Content of whois lookup.
      */
     public function lookup()
@@ -106,7 +106,8 @@ class Whois
                 }
             }
         }
-        return "$domain domain lookup results from $server server:\n\n" . $result;
+        //return "$domain domain lookup results from $server server:\n\n" . $result;
+        return $result;
     }
 
     /**
