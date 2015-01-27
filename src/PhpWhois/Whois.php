@@ -97,6 +97,7 @@ class Whois
         if (!$result) {
             return "Error: No results retrieved from $server server for $domain domain!";
         } else {
+            $primary_result = $result;
             while (strpos($result, "Whois Server:") !== false) {
                 preg_match("/Whois Server: (.*)/", $result, $matches);
                 $secondary = $matches[1];
@@ -107,7 +108,7 @@ class Whois
             }
         }
         //return "$domain domain lookup results from $server server:\n\n" . $result;
-        return $result;
+        return "$primary_result\n\n=========================\n\n$result";
     }
 
     /**
