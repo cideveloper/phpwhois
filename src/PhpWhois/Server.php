@@ -285,7 +285,7 @@ class Server
         "yt" => "whois.nic.yt", // Mayotte
         "yu" => "whois.ripe.net",
     );
-    
+
     /**
      * @var array $continentServers Array of servers for IP lookup.
      */
@@ -307,7 +307,8 @@ class Server
      */
     public function getServerByTld($tld)
     {
-        return $this->servers[$tld];
+        //return $this->servers[$tld];
+        return (isset($this->servers[$tld])) ? $this->servers[$tld] : null;
     }
 
     /**
